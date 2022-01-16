@@ -1,0 +1,209 @@
+/*-------------------*/
+/* custom properties */
+/* ----------------- */
+:root {
+  /* colors */
+  --clr-pri-pale-blue: 225, 100%, 94%;
+  --clr-pri-bright-blue: 245, 75%, 52%;
+  --clr-very-pale-blue: 225, 100%, 98%;
+  --clr-desaturated-blue: 224, 23%, 55%;
+  --clr-dark-blue: 223, 47%, 23%;
+  --clr-white: 0, 0%, 100%;
+  /* font sizes */
+  --fs-900: clamp(1.375rem, 5vw, 1.75rem);
+  --fs-700: clamp(.875rem, 3vw, 1rem);
+  --fs-500: 0.81rem;
+}
+@media (min-width: 35rem) {
+  :root {
+    /* --fs-900: 1.75rem; */
+    /* --fs-700: 1rem; */
+    --fs-500: 0.875rem;
+  }
+}
+/*---------------*/
+/* Reset */
+/* --------------*/
+
+/* Box sizing */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Reset margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+/* set up the body */
+body {
+  margin: 0;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: var(--fs-700);
+  font-weight: 400;
+  color: hsl(var(--clr-dark-blue));
+  background-color: hsl(var(--clr-very-pale-blue));
+  letter-spacing: .7px;
+}
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button{
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer; 
+}
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----------------- */
+/* utility classes */
+/* ----------------- */
+.flex{
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+/* typography */
+.fs-900{
+  font-size: var(--fs-900);
+}
+.fs-700{
+  font-size: var(--fs-700);
+}
+.fs-500{
+  font-size: ar(--fs-500);
+}
+/* font-colors */
+.text-dark{
+  color: hsl(var(--clr-dark-blue));
+}
+.text-desaturated{
+  color: hsl(var(--clr-desaturated-blue));
+}
+.text-very-pale-blue{
+  color: hsl(var(--clr-very-pale-blue));
+}
+/* background - colors */
+
+.bg-white{
+  background-color: hsl(var(--clr-white));
+}
+.bg-very-pale-blue{
+  background-color: hsl(var(--clr-very-pale-blue));
+}
+.bg-pri-bright-blue{
+  background-color: hsl(var(--clr-pri-bright-blue));
+}
+/* custom background-image  */
+@media (max-width: 24rem){
+  .desktop{
+    visibility: hidden;
+  }
+}
+@media (min-width: 35rem){
+  .mobile{
+    visibility: hidden;
+  }
+ }
+/* ----------------- */
+/* custom properties */
+/* ----------------- */
+/* home */
+.home {
+  flex-direction: column;
+  align-items: center;
+}
+.main-bg{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: clamp(21rem, 45vw, 29rem);
+  min-height: 36.4rem;
+  height: clamp(35.4rem, 65vw, 43.8rem);
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 33px;
+  align-items: center;
+}
+.card > h1 {
+  align-self: center;
+  margin-top: 1.2rem;
+}
+.card > p {
+  text-align: center;
+  line-height: 150%;
+}
+
+.hero-svg {
+  width: 100%;
+  border-top-left-radius:  33px;
+  border-top-right-radius:  33px;
+  height: clamp(10rem, 65vw, 13.8rem);
+}
+
+.music-icon{
+  width: 3rem; 
+  margin-right: .8em;
+}
+.plan-box{
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  border-radius: 25px;
+  --gap: 0rem;
+  margin: .5rem 0;
+}
+
+.payment-button {
+  min-height: 3.5rem;
+  border-radius: 15px;
+}
+
+.payment-button,
+.plan-box,
+.card > p{
+  width: clamp(19rem, 35vw, 22rem);
+}
+.cancel-button{
+  margin-bottom: 2rem;
+  min-height: 2.5rem;
+}
+.plan-box > a {
+  color: hsl(var(--clr-pri-bright-blue));
+  /* text-decoration: underline; */
+}
